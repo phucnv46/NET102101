@@ -9,7 +9,7 @@
 
         private void OnButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
+            Button button = (Button)sender; // Ep kiểu chuyển đổi sender thành button 
             switch (button.Text)
             {
                 default:
