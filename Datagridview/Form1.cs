@@ -20,7 +20,7 @@ namespace Datagridview
                 new Nganh(){MaNganh = "Java",TenNganh="Java"},
             };
 
-        static BindingList<SinhVien> sinhViens = new BindingList<SinhVien>() {
+        static BindingList<SinhVien> sinhViens = new BindingList<SinhVien>() { // BindingList List chuyên dụng dành cho datagrid view
             new SinhVien(){MaSV = 1, HoTen="Nguyễn Văn Phúc",Nganh=nganhs[0],Lop=lops[0],
                 MaNganh = nganhs[0].MaNganh, MaLop=lops[0].MaLop},
             new SinhVien(){MaSV = 2, HoTen="Nguyễn Thị Linh",Nganh=nganhs[1],Lop=lops[2],
@@ -50,7 +50,7 @@ namespace Datagridview
         }
 
 
-        private void BindingToControls(SinhVien sinhVien)
+        private void BindingToControls(SinhVien sinhVien) // CHuyển dữ liệu từ model sang controls (textbox, combobox)
         {
             textBoxMa.Text = sinhVien.MaSV.ToString();
             textBoxTen.Text = sinhVien.HoTen;
@@ -60,7 +60,7 @@ namespace Datagridview
 
 
 
-        private void BindingToModel(SinhVien sinhVien)
+        private void BindingToModel(SinhVien sinhVien) // Chuyển dữ liệu từ control vào model
         {
             sinhVien.MaSV = long.Parse(textBoxMa.Text);
             sinhVien.HoTen = textBoxTen.Text;
@@ -73,7 +73,7 @@ namespace Datagridview
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             buttonSua.Enabled = true;
-            SinhVien sinhVien = dataGridView1.CurrentRow.DataBoundItem as SinhVien;
+            SinhVien sinhVien = dataGridView1.CurrentRow.DataBoundItem as SinhVien; // CHuyển dữ liệu từ dòng thành object
             if (sinhVien != null)
             {
                 BindingToControls(sinhVien);
