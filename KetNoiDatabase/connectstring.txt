@@ -1,0 +1,3 @@
+Server=(localdb)\MSSQLLocalDB;Database=Net102101;Trusted_Connection=True;TrustServerCertificate=True
+
+Scaffold-DbContext 'Data Source=np:\\.\pipe\LOCALDB#C73260C0\tsql\query;Initial Catalog=Net102101;Trusted_Connection=True;TrustServerCertificate=True' Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -OutputDir Models
