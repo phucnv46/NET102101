@@ -33,7 +33,9 @@ namespace KetNoiDatabaseNhieuBang.Views
             comboBoxTG.ValueMember = nameof(TacGium.MaTacGia);
         }
 
+        private void buttonThem_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

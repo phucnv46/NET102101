@@ -41,15 +41,15 @@
             textBoxISBN = new TextBox();
             label6 = new Label();
             comboBoxTG = new ComboBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            textBox3 = new TextBox();
+            buttonThem = new Button();
+            buttonSua = new Button();
+            buttonXoa = new Button();
+            buttonLM = new Button();
+            textBoxTK = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
+            comboBoxSX = new ComboBox();
+            comboBoxCSX = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownNamSX).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownSL).BeginInit();
@@ -169,48 +169,49 @@
             comboBoxTG.Size = new Size(263, 33);
             comboBoxTG.TabIndex = 13;
             // 
-            // button1
+            // buttonThem
             // 
-            button1.Location = new Point(164, 437);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 14;
-            button1.Text = "Thêm";
-            button1.UseVisualStyleBackColor = true;
+            buttonThem.Location = new Point(164, 437);
+            buttonThem.Name = "buttonThem";
+            buttonThem.Size = new Size(112, 34);
+            buttonThem.TabIndex = 14;
+            buttonThem.Text = "Thêm";
+            buttonThem.UseVisualStyleBackColor = true;
+            buttonThem.Click += buttonThem_Click;
             // 
-            // button2
+            // buttonSua
             // 
-            button2.Location = new Point(351, 437);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 15;
-            button2.Text = "Cập nhật";
-            button2.UseVisualStyleBackColor = true;
+            buttonSua.Location = new Point(351, 437);
+            buttonSua.Name = "buttonSua";
+            buttonSua.Size = new Size(112, 34);
+            buttonSua.TabIndex = 15;
+            buttonSua.Text = "Cập nhật";
+            buttonSua.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonXoa
             // 
-            button3.Location = new Point(530, 437);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 34);
-            button3.TabIndex = 16;
-            button3.Text = "Xóa";
-            button3.UseVisualStyleBackColor = true;
+            buttonXoa.Location = new Point(530, 437);
+            buttonXoa.Name = "buttonXoa";
+            buttonXoa.Size = new Size(112, 34);
+            buttonXoa.TabIndex = 16;
+            buttonXoa.Text = "Xóa";
+            buttonXoa.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonLM
             // 
-            button4.Location = new Point(681, 437);
-            button4.Name = "button4";
-            button4.Size = new Size(112, 34);
-            button4.TabIndex = 17;
-            button4.Text = "Làm mới";
-            button4.UseVisualStyleBackColor = true;
+            buttonLM.Location = new Point(681, 437);
+            buttonLM.Name = "buttonLM";
+            buttonLM.Size = new Size(112, 34);
+            buttonLM.TabIndex = 17;
+            buttonLM.Text = "Làm mới";
+            buttonLM.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // textBoxTK
             // 
-            textBox3.Location = new Point(988, 357);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(263, 31);
-            textBox3.TabIndex = 19;
+            textBoxTK.Location = new Point(988, 357);
+            textBoxTK.Name = "textBoxTK";
+            textBoxTK.Size = new Size(263, 31);
+            textBoxTK.TabIndex = 19;
             // 
             // label7
             // 
@@ -230,35 +231,35 @@
             label8.TabIndex = 20;
             label8.Text = "Sắp xếp";
             // 
-            // comboBox2
+            // comboBoxSX
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(988, 439);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(263, 33);
-            comboBox2.TabIndex = 21;
+            comboBoxSX.FormattingEnabled = true;
+            comboBoxSX.Location = new Point(988, 439);
+            comboBoxSX.Name = "comboBoxSX";
+            comboBoxSX.Size = new Size(263, 33);
+            comboBoxSX.TabIndex = 21;
             // 
-            // comboBox3
+            // comboBoxCSX
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(1281, 439);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(104, 33);
-            comboBox3.TabIndex = 22;
+            comboBoxCSX.FormattingEnabled = true;
+            comboBoxCSX.Location = new Point(1281, 439);
+            comboBoxCSX.Name = "comboBoxCSX";
+            comboBoxCSX.Size = new Size(104, 33);
+            comboBoxCSX.TabIndex = 22;
             // 
             // QuanLySach
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
+            Controls.Add(comboBoxCSX);
+            Controls.Add(comboBoxSX);
             Controls.Add(label8);
-            Controls.Add(textBox3);
+            Controls.Add(textBoxTK);
             Controls.Add(label7);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(buttonLM);
+            Controls.Add(buttonXoa);
+            Controls.Add(buttonSua);
+            Controls.Add(buttonThem);
             Controls.Add(comboBoxTG);
             Controls.Add(textBoxISBN);
             Controls.Add(label6);
@@ -296,14 +297,14 @@
         private TextBox textBoxISBN;
         private Label label6;
         private ComboBox comboBoxTG;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private TextBox textBox3;
+        private Button buttonThem;
+        private Button buttonSua;
+        private Button buttonXoa;
+        private Button buttonLM;
+        private TextBox textBoxTK;
         private Label label7;
         private Label label8;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
+        private ComboBox comboBoxSX;
+        private ComboBox comboBoxCSX;
     }
 }

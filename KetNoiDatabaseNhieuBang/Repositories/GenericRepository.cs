@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Dynamic.Core;
 
 namespace KetNoiDatabaseNhieuBang.Repositories
 {
@@ -56,6 +57,21 @@ namespace KetNoiDatabaseNhieuBang.Repositories
                 query = query.Include(rel);
             }
             return query.ToList();
+        }
+
+
+        public List<T> TimKiem(string search)
+        {
+            
+
+            return null;
+        }
+
+
+        public List<T> SapXep(string prop, string direct)
+        {
+            // Orderby => tang, OrderbyDescending
+            return _dbSet.OrderBy($"{prop} {direct}").ToList();
         }
     }
 }
