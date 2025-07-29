@@ -1,5 +1,7 @@
-﻿using KetNoiDatabaseNhieuBang.Models;
+﻿using KetNoiDatabaseNhieuBang.Extentions;
+using KetNoiDatabaseNhieuBang.Models;
 using KetNoiDatabaseNhieuBang.Repositories;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,7 @@ namespace KetNoiDatabaseNhieuBang.Views
     {
         GenericRepository<Sach> _repository;
         GenericRepository<TacGium> _repositoryTG;
+        List<Sach> saches = new List<Sach>();
         public FormQLS()
         {
             InitializeComponent();
@@ -27,7 +30,8 @@ namespace KetNoiDatabaseNhieuBang.Views
 
         private void LoadControl()
         {
-            dataGridView1.DataSource = _repository.GetAllWithIncludes(nameof(Sach.MaTacGiaNavigation));
+            saches = _repository.GetAllWithIncludes(nameof(Sach.MaTacGiaNavigation));
+            dataGridView1.DataSource = saches;
             comboBoxTG.DataSource = _repositoryTG.GetAll();
             comboBoxTG.DisplayMember = nameof(TacGium.HoTen);
             comboBoxTG.ValueMember = nameof(TacGium.MaTacGia);
@@ -112,8 +116,10 @@ namespace KetNoiDatabaseNhieuBang.Views
 
         private void comboBoxCSX_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = _repository.SapXep(((dynamic)comboBoxSX.SelectedItem).TT
-                , ((dynamic)comboBoxCSX.SelectedItem).Key);
+            string thuocTinh = ((dynamic)comboBoxSX.SelectedItem).TT;
+            string chieuSapXep = ((dynamic)comboBoxCSX.SelectedItem).Key;
+
+            dataGridView1.DataSource = saches.SapXepExp(thuocTinh, chieuSapXep);
         }
 
         private void buttonLM_Click(object sender, EventArgs e)
@@ -122,11 +128,19 @@ namespace KetNoiDatabaseNhieuBang.Views
             textBoxTen.ResetText();
             textBoxISBN.ResetText();
             comboBoxCSX.SelectedIndex = 0;
-            comboBoxSX.SelectedIndex  = 0;
+            comboBoxSX.SelectedIndex = 0;
             comboBoxTG.SelectedIndex = 0;
             numericUpDownNamSX.Value = 0;
             numericUpDownSL.Value = 0;
             LoadControl();
+        }
+
+        private void textBoxTM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter || e.KeyChar == 13)
+            {
+                dataGridView1.DataSource = saches.TimKiem(textBoxTM.Text.Trim());
+            }
         }
     }
 }

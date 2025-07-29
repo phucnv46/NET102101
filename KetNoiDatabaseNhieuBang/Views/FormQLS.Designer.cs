@@ -87,6 +87,7 @@
             textBoxTM.Name = "textBoxTM";
             textBoxTM.Size = new Size(263, 31);
             textBoxTM.TabIndex = 41;
+            textBoxTM.KeyPress += textBoxTM_KeyPress;
             // 
             // label7
             // 
