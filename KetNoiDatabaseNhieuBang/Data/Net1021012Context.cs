@@ -24,7 +24,7 @@ public partial class Net1021012Context : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=np:\\\\.\\pipe\\LOCALDB#71C67569\\tsql\\query;Database=Net102101_2;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=np:\\\\.\\pipe\\LOCALDB#F976FF1D\\tsql\\query;Database=Net102101_2;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
