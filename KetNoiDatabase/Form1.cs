@@ -28,7 +28,7 @@ namespace KetNoiDatabase
             };
         }
 
-        private void BindingToControl(NhanVien nhanVien)
+        private void BindingToControl(NhanVien nhanVien)  //Chuyển object từ trong list lên controls
         {
             textBoxMa.Text = nhanVien.MaNhanVien;
             textBoxTen.Text = nhanVien.TenNhanVien;

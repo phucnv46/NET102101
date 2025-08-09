@@ -35,7 +35,7 @@ namespace KetNoiDatabase.Repositories
         public void Add(NhanVien nv)  // Thêm object vào bảng 
         {
             
-             _dbSet.Add(nv);
+             _dbSet.Add(nv); // Thêm vào bảng
              _context.SaveChanges(); // Lưu lại thay đổi đối với database 
         }
         public void Update(NhanVien nv)
